@@ -1,0 +1,23 @@
+{
+  "target_questions": 2000,
+  "minimum_answers": 5,
+  "maximum_answers": 1200,
+  "types": {
+    "actor_movies": 160,
+    "director_movies": 80,
+    "movie_cast": 60,
+    "artist_songs": 150,
+    "artist_albums": 100,
+    "country_rivers": 80,
+    "country_mountains": 70,
+    "country_subdivisions": 100,
+    "animal_family_species": 250,
+    "science_field_scientists": 250,
+    "sports_team_players": 250,
+    "author_works": 150,
+    "game_developer_titles": 100,
+    "software_developer_products": 100,
+    "historical_heads_of_state": 50,
+    "historical_heads_of_government": 50
+  }
+}

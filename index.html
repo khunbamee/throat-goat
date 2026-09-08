@@ -1,76 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
-
-    <title>Deep Answer</title>
-
-    <link
-        rel="stylesheet"
-        href="style.css"
-    >
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#041522">
+  <meta name="description" content="Deep Answer is a rarity-based daily trivia game.">
+  <title>Deep Answer</title>
+  <link rel="stylesheet" href="style.css">
 </head>
-
-
 <body>
-
-    <main class="game">
-
+  <main class="shell">
+    <header class="brand-row">
+      <div>
+        <p class="eyebrow">RARITY TRIVIA</p>
         <h1>DEEP ANSWER</h1>
+      </div>
+      <div class="depth-pill" aria-live="polite"><span id="header-score">0</span> pts</div>
+    </header>
 
-        <p id="question-number">
-            Loading...
-        </p>
+    <section id="start-screen" class="panel start-panel">
+      <p class="kicker">How deep can your knowledge go?</p>
+      <h2>Seven prompts. Twenty-five seconds each.</h2>
+      <p class="muted">Give a valid answer. Obvious answers score less; uncommon answers score more. Articles and punctuation do not matter, so <strong>The Smiths</strong> and <strong>Smiths</strong> both count.</p>
+      <div id="bank-status" class="bank-status">Loading question bank…</div>
+      <div class="start-actions">
+        <button id="daily-button" class="primary" type="button" disabled>Daily Dive</button>
+        <button id="practice-button" class="secondary" type="button" disabled>Practice Dive</button>
+      </div>
+      <p id="daily-note" class="tiny"></p>
+    </section>
 
-        <h2 id="question">
-            Loading question...
-        </h2>
-
-
-        <form id="answer-form">
-
-            <input
-                id="answer-input"
-                type="text"
-                autocomplete="off"
-                placeholder="Type your answer..."
-                required
-            >
-
-            <button type="submit">
-                SUBMIT
-            </button>
-
-        </form>
-
-
-        <div id="result"></div>
-
-
-        <div id="score">
-            Score: 0
+    <section id="game-screen" class="panel" hidden>
+      <div class="game-topline">
+        <div>
+          <span id="mode-label" class="mode-label">DAILY DIVE</span>
+          <span id="question-number" class="muted">1 / 7</span>
         </div>
+        <div class="timer-wrap" aria-label="Time remaining">
+          <div id="timer" class="timer">25</div>
+          <span>sec</span>
+        </div>
+      </div>
 
+      <div class="progress" aria-hidden="true"><div id="progress-fill"></div></div>
+      <p id="category" class="category"></p>
+      <h2 id="question">Loading question…</h2>
 
-        <button
-            id="next-button"
-            type="button"
-            hidden
-        >
-            NEXT
-        </button>
+      <form id="answer-form" autocomplete="off">
+        <label class="sr-only" for="answer-input">Your answer</label>
+        <input id="answer-input" type="text" autocomplete="off" spellcheck="false" placeholder="Type one answer…" required>
+        <button id="submit-button" class="primary" type="submit">Submit</button>
+      </form>
 
-    </main>
+      <div id="result" class="result" aria-live="polite"></div>
+      <div class="round-footer">
+        <div>Score <strong id="score">0</strong></div>
+        <div>Depth <strong id="depth">0 m</strong></div>
+      </div>
+      <button id="next-button" class="secondary next" type="button" hidden>Next question</button>
+    </section>
 
+    <section id="end-screen" class="panel" hidden>
+      <p class="eyebrow">DIVE COMPLETE</p>
+      <h2 id="final-score">0 points</h2>
+      <p id="final-depth" class="final-depth">0 m deep</p>
+      <div id="breakdown" class="breakdown"></div>
+      <div class="start-actions">
+        <button id="share-button" class="primary" type="button">Copy result</button>
+        <button id="again-button" class="secondary" type="button">Practice again</button>
+      </div>
+      <p id="share-status" class="tiny" aria-live="polite"></p>
+    </section>
+  </main>
 
-    <script src="game.js"></script>
-
+  <script src="game.js"></script>
 </body>
-
 </html>
