@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Deep Answer</title>
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+</head>
+
+
+<body>
+
+    <main class="game">
+
+        <h1>DEEP ANSWER</h1>
+
+        <p id="question-number">
+            Loading...
+        </p>
+
+        <h2 id="question">
+            Loading question...
+        </h2>
+
+
+        <form id="answer-form">
+
+            <input
+                id="answer-input"
+                type="text"
+                autocomplete="off"
+                placeholder="Type your answer..."
+                required
+            >
+
+            <button type="submit">
+                SUBMIT
+            </button>
+
+        </form>
+
+
+        <div id="result"></div>
+
+
+        <div id="score">
+            Score: 0
+        </div>
+
+
+        <button
+            id="next-button"
+            type="button"
+            hidden
+        >
+            NEXT
+        </button>
+
+    </main>
+
+
+    <script src="game.js"></script>
+
+</body>
+
+</html>
