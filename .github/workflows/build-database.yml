@@ -1,0 +1,57 @@
+name: Build trivia database
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "17 3 1 * *"
+  push:
+    branches:
+      - main
+      - complete-game-v1
+    paths:
+      - "source/**"
+      - "tools/**"
+      - "requirements.txt"
+      - ".github/workflows/build-database.yml"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: deep-answer-database-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: "pip"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Build database
+        run: python tools/build_database.py
+
+      - name: Validate database
+        run: python tools/validate_database.py
+
+      - name: Commit generated data
+        run: |
+          git config user.name "deep-answer-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/questions.json data/bank.json data/answers
+          if git diff --cached --quiet; then
+            echo "Database already up to date."
+            exit 0
+          fi
+          git commit -m "Build 2000-question trivia database"
+          git push
