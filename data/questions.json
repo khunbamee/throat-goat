@@ -1,0 +1,132 @@
+[
+    {
+        "id": "q0001",
+
+        "question":
+            "Name a movie Samuel L. Jackson acted in",
+
+        "category":
+            "movies",
+
+        "answers": [
+
+            {
+                "name": "Pulp Fiction",
+                "aliases": [],
+                "score": 10
+            },
+
+            {
+                "name": "Jurassic Park",
+                "aliases": [],
+                "score": 20
+            },
+
+            {
+                "name": "Django Unchained",
+                "aliases": ["Django"],
+                "score": 20
+            },
+
+            {
+                "name": "The Hateful Eight",
+                "aliases": [],
+                "score": 40
+            },
+
+            {
+                "name": "Snakes on a Plane",
+                "aliases": [],
+                "score": 40
+            },
+
+            {
+                "name": "Coach Carter",
+                "aliases": [],
+                "score": 50
+            }
+        ]
+    },
+
+
+    {
+        "id": "q0002",
+
+        "question":
+            "Name an animal found in the Arctic Ocean",
+
+        "category":
+            "animals",
+
+        "answers": [
+
+            {
+                "name": "Polar Bear",
+                "aliases": [],
+                "score": 10
+            },
+
+            {
+                "name": "Walrus",
+                "aliases": [],
+                "score": 20
+            },
+
+            {
+                "name": "Narwhal",
+                "aliases": [],
+                "score": 30
+            },
+
+            {
+                "name": "Bowhead Whale",
+                "aliases": [],
+                "score": 50
+            },
+
+            {
+                "name": "Arctic Cod",
+                "aliases": [],
+                "score": 60
+            }
+        ]
+    },
+
+
+    {
+        "id": "q0003",
+
+        "question":
+            "Name a band from Manchester",
+
+        "category":
+            "music",
+
+        "answers": [
+
+            {
+                "name": "Oasis",
+                "aliases": [],
+                "score": 10
+            },
+
+            {
+                "name": "The Smiths",
+                "aliases": [],
+                "score": 20
+            },
+
+            {
+                "name": "Joy Division",
+                "aliases": [],
+                "score": 30
+            },
+
+            {
+                "name": "New Order",
+                "aliases": [],
+                "score": 40
+            }
+        ]
+    }
+]
